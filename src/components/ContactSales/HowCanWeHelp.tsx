@@ -143,60 +143,57 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
    // }, [location?.country_calling_code, location?.currency]);
 
    return (
-      <div className=" flex flex-col bg-slate-200/50 p-4 py-8 md:px-12 md:py-6    w-full md:justify-self-end  md:rounded-[15px]">
+      <div className=" flex w-full flex-col bg-slate-200/50 p-4 py-8 md:justify-self-end    md:rounded-[15px] md:px-12  md:py-6">
          {/* <div className=" flex flex-col  mt-8 md:mt-10 gap-4 pb-[2rem] container px-container-xl lg:px-container-lg xl:px-container-xl overflow-x-hidden relative max-w-[1000px]    w-full  rounded-[15px]"> */}
          <Form {...form}>
             <form
                onSubmit={form.handleSubmit(onSubmit)}
-               className="w-full flex flex-col gap-4"
+               className="flex w-full flex-col gap-4"
                ref={formRef}
             >
                {/* <section className=" grid grid-cols-1 gap-6  "></section> */}
 
-               <section className="md:mt-6 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-6  ">
+               <section className="grid grid-cols-1 gap-6 md:mt-6 md:grid-cols-[1fr_1fr]  ">
                   <FormField
                      control={form.control}
                      name="user_name"
                      render={({ field }) => (
                         <FormItem>
                            <div className="relative">
-                              <label className="block mb-4   rounded-full  text-xl">
+                              <label className="mb-4 block   rounded-full  text-xl">
                                  Full Name
                               </label>
                               <FormControl>
                                  <Input
-                                    className="py-8  text-lg bg-slate-50  placeholder:text-gray-300 placeholder:text-lg    transition-all duration-200 ease-in-out "
+                                    className="bg-slate-50  py-8 text-lg  transition-all duration-200    ease-in-out placeholder:text-lg placeholder:text-gray-300 "
                                     placeholder="Jane Doe"
                                     {...field}
                                  />
                               </FormControl>
                            </div>
-                           <FormMessage className="text-xl mt-1" />
+                           <FormMessage className="mt-1 text-xl" />
                         </FormItem>
                      )}
                   />
                   <FormField
                      control={form.control}
-                     name="user_name"
+                     name="user_email"
                      render={({ field }) => (
                         <FormItem>
                            <div className="relative">
-                              <label className="block mb-4   rounded-full  text-xl">
-                                 Full Name
-                              </label>
+                              <label className="mb-4 block  rounded-full  text-xl">Email</label>
                               <FormControl>
                                  <Input
-                                    className="py-8  text-lg bg-slate-50  placeholder:text-gray-300 placeholder:text-lg   transition-all duration-200 ease-in-out "
-                                    placeholder="Jane Doe"
+                                    className="bg-slate-50 py-8 text-lg  transition-all duration-200  ease-in-out placeholder:text-lg placeholder:text-gray-300"
                                     {...field}
+                                    placeholder="youremail@gmail.com"
                                  />
                               </FormControl>
                            </div>
-                           <FormMessage className="text-xl mt-1" />
+                           <FormMessage className="mt-1 text-xl" />
                         </FormItem>
                      )}
                   />
-
                   {/* <FormField
                      control={form.control}
                      name="user_phone"
@@ -257,35 +254,17 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
                      )}
                   /> */}
                </section>
-               <FormField
-                  control={form.control}
-                  name="user_email"
-                  render={({ field }) => (
-                     <FormItem>
-                        <div className="relative">
-                           <label className="block mb-4  rounded-full  text-xl">Email</label>
-                           <FormControl>
-                              <Input
-                                 className="py-8 bg-slate-50 text-lg  placeholder:text-gray-300 placeholder:text-lg  transition-all duration-200 ease-in-out"
-                                 {...field}
-                                 placeholder="youremail@gmail.com"
-                              />
-                           </FormControl>
-                        </div>
-                        <FormMessage className="text-xl mt-1" />
-                     </FormItem>
-                  )}
-               />
+
                <FormField
                   control={form.control}
                   name="message"
                   render={({ field }) => (
                      <FormItem>
-                        <label className="block mb-4 rounded-full  text-xl">Message</label>
+                        <label className="mb-4 block rounded-full  text-xl">Message</label>
                         <FormControl>
                            <Textarea
                               rows={8}
-                              className="resize-none bg-slate-50 px-[0.5rem] focus-within:border-0 text-secondary-2 placeholder:text-secondary-2/[0.38] text-xl mb-[2.5rem] py-4   placeholder:text-gray-300 placeholder:text-lg    "
+                              className="mb-[2.5rem] resize-none bg-slate-50 px-[0.5rem] py-4 text-xl text-secondary-2 placeholder:text-lg placeholder:text-gray-300   placeholder:text-secondary-2/[0.38] focus-within:border-0    "
                               {...field}
                               placeholder="Write here..."
                            />
@@ -295,13 +274,13 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
                      </FormItem>
                   )}
                />
-               <div className=" flex flex-col mt-4 items-center gap-6">
+               <div className=" mt-4 flex flex-col items-center gap-6">
                   <button
                      disabled={formIsLoading}
                      type="submit"
-                     className="px-6 w-full py-4 bg-primary-1 rounded-[6px] flex items-center justify-center gap-2 group hover:opacity-90 transition-all duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-50"
+                     className="group flex w-full items-center justify-center gap-2 rounded-[6px] bg-primary-1 px-6 py-4 transition-all duration-200 ease-in-out hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                     <span className="text-white text-xl font-[500] leading-[1.5rem] tracking-[0.02875rem] disabled:cursor-not-allowed disabled:opacity-50">
+                     <span className="text-xl font-[500] leading-[1.5rem] tracking-[0.02875rem] text-white disabled:cursor-not-allowed disabled:opacity-50">
                         {formIsLoading ? <Spinner /> : "Send Us a Message"}
                      </span>
                   </button>
@@ -309,7 +288,7 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
                   <span
                      className={`${
                         message.isError ? "text-red-500" : "text-green-700"
-                     } text-[16px] text-center transition-opacity duration-200 ease-in-out`}
+                     } text-center text-[16px] transition-opacity duration-200 ease-in-out`}
                   >
                      {message.text}
                   </span>

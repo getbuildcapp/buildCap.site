@@ -70,8 +70,8 @@ export const FooterLinksData = [
             //    url: "#faq",
             // },
             {
-               title: "Support@buildCAP.com",
-               url: "mailto:support@joi.com",
+               title: "support@getbuildcap.co",
+               url: "mailto:support@getbuildcap.co",
             },
          ],
       },

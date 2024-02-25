@@ -38,20 +38,20 @@ const FormSchema = z.object({
          message: "Please enter a valid email.",
       })
       .email(),
-   name: z.string({
+   user_name: z.string({
       required_error: "Name is required.",
    }),
 
-   business_type: z.string({
-      required_error: "Business Name is required.",
+   user_type: z.string({
+      required_error: "Business type is required.",
    }),
    message: z
       .string()
       .min(4, {
          message: "Message must be at least 4 characters.",
       })
-      .max(160, {
-         message: "Message must not be longer than 16 characters.",
+      .max(180, {
+         message: "Message must not be longer than 180 characters.",
       }),
 });
 const GetStartedForm = () => {
@@ -74,13 +74,14 @@ const GetStartedForm = () => {
       setFormIsLoading(true);
 
       try {
-         // const data = await emailjs.sendForm(
-         //    "service_f2ja3b8",
-         //    "template_6z8o098",
-         //    formRef.current as HTMLFormElement,
-         //    "30meubG4UgtRoKoLr",
-         // );
-         // setMessage({ text: data?.text, isError: false });
+         const data = await emailjs.sendForm(
+            "service_k08w62w",
+            "template_fsbxx8c",
+            formRef.current as HTMLFormElement,
+            "X3OkpMZncUC0S79v4",
+         );
+         console.log(data);
+         setMessage({ text: data?.text, isError: false });
          toast.info("Thanks for signing up, We will notify you when we launch!", {
             position: "top-right",
             autoClose: 5000,
@@ -145,7 +146,7 @@ const GetStartedForm = () => {
                >
                   <FormField
                      control={form.control}
-                     name="name"
+                     name="user_name"
                      render={({ field }) => (
                         <FormItem>
                            <div className="relative">
@@ -183,7 +184,7 @@ const GetStartedForm = () => {
 
                      <FormField
                         control={form.control}
-                        name="business_type"
+                        name="user_type"
                         render={({ field }) => (
                            <FormItem>
                               <div className="relative">

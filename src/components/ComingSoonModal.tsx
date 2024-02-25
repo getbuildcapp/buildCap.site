@@ -215,7 +215,7 @@ const ComingSoonModal = () => {
                      </form>
                   </Form>
                   <a
-                     href="mailto:support@jointhebuildCAP.com"
+                     href="mailto:support@getbuildcap.co"
                      className="text-center font-semibold text-primary-1 underline md:text-lg"
                   >
                      Or Contact Us

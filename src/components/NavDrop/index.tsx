@@ -77,13 +77,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                      <a href={url("/about-us")}>About</a>
                   </span>
                </NavigationMenuItem>
-               <NavigationMenuItem>
-                  <span
-                     className={` block cursor-pointer px-4  font-[400]  leading-[1.5rem] tracking-[0.005rem] lg:text-[1.15rem] `}
-                  >
-                     <a href={url("/#features")}>Features</a>
-                  </span>
-               </NavigationMenuItem>
+
                <NavigationMenuItem>
                   <span
                      className={` block cursor-pointer px-4  font-[400]  leading-[1.5rem] tracking-[0.005rem] lg:text-[1.15rem] `}
